@@ -1,14 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-	{% if createUser %}
-		<h1>Sign Up</h1>
-	{% endif %}
-	{% if not createUser %}
-		<h1>Edit Info</h1>
-	{% endif %}
+	<h1>Log In</h1>
 	{{ error_data | safe }}
 	<p class="center">
-		<br/>
+		Welcome!<br/>
+		Login here:
 		{{ data | safe }}
 	</p>
 {% endblock %}

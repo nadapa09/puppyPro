@@ -1,8 +1,10 @@
-INSERT INTO User(username, type, firstname, lastname, dogid, password) VALUES ('DinaD', 'owner', 'Dina', 'TheDogOwner', 1, '123abc');
+INSERT INTO User(username, type, firstname, lastname, email, dogid, password) VALUES ('DinaD', 'owner', 'Dina', 'TheDogOwner', 'DinaTheDogOwner@gmail.com', 1, '123abc');
 
-INSERT INTO User(username, type, firstname, lastname, dogid, password) VALUES ('nadapa', 'owner', 'Nithin', 'Adapa', 2, '123abc');
+INSERT INTO User(username, type, firstname, lastname, email, dogid, password) VALUES ('nadapa', 'owner', 'Nithin', 'Adapa', 'adapa@umich.edu', 2, '123abc');
 
-INSERT INTO User(username, type, firstname, lastname, dogid, password) VALUES ('svale', 'lover', 'Shounak', 'Vale', NULL, '123abc');
+INSERT INTO User(username, type, firstname, lastname, email, password) VALUES ('svale', 'lover', 'Shounak', 'Vale', 'svale@umich.edu', '123abc');
+
+INSERT INTO User(username, firstname, lastname, email, password) VALUES ('dscheng', 'David', 'Cheng', 'dscheng@umich.edu', '123456');
 
 INSERT INTO Dog(name, breed, age) VALUES ('Sammy', 'Shih-Tzu', 1);
 

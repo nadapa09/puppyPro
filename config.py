@@ -6,5 +6,5 @@ env = dict(
 	port = 3000,
 	user = 'root', 
 	password = 'root',
-	db = 'test_db',
+	db = 'puppypro_db',
 )

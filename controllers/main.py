@@ -6,17 +6,33 @@ main = Blueprint('main', __name__, template_folder='templates')
 
 @main.route('/')
 def main_route():
-    return render_template("index.html")
+	login_data = ''
+	data = ''
+	if 'username' in session:
+		username = session['username']
+		db = connect_to_database()
+		cur = db.cursor()
+		cur.execute('SELECT firstname, lastname FROM User WHERE username = \"' + username + '\"')
+		result = cur.fetchall()
+		result = result[0]
+		firstname = result['firstname']
+		lastname = result['lastname']
+		login_data += '<li class="nav-item"><a class="nav-link" href=' + url_for('user.user_route') + '>%s %s</a></li>' % (firstname, lastname)
+		login_data += '<li class="nav-item"><form method=\"POST\" action=\"%s\" id=nav_logout>' % (url_for('user.logout_route'))
+		login_data += '<button type=\"submit\">Logout</button><br/>'
+		login_data += '</form></li>'
 
-# @main.route('/hello')
-# def main_hello():
-#     db = connect_to_database()
-#     cur = db.cursor()
-#     cur.execute('SELECT id, name FROM test_tbl')
-#     results = cur.fetchall()
-#     print(results)
-#     print_str = "<table>"
-#     for result in results:
-#         print_str += "<tr><td>%s</td><td>%s</td><tr>" % (result['id'], result['name'])
-#     print_str += "</table>"
-#     return print_str
+		data += '<p class="center"><h3>Welcome ' + firstname + ' ' + lastname + '</h3></p><br>'
+		data += '<form action="/offerHelp"><input type="submit" class="btn btn-primary btn-lg btn-block" value="Help Someone Else Out" /></form><hr>'
+		data += '<form action="/requestHelp"><input type="submit" class="btn btn-secondary btn-lg btn-block" value="Request Some Help" /></form>'
+	else:
+		login_data += '<li class="nav-item"><a class="nav-link" href=' + url_for('user.login_route') + ' id=home_login>Login</a></li>'
+		login_data += '<li class="nav-item"><a class="nav-link" href=' + url_for('user.user_create_route') + ' id=home_user_create>Sign Up</a></li>'
+
+		data += '<p class="center"><h3>Welome to PuppyPro!<br> Please log in or sign up!</h3></p><br>'
+		data += '<form action=\"%s\"><input type="submit" class="btn btn-primary btn-lg btn-block" value="Login" /></form><hr>' % (url_for('user.login_route'))
+		data += '<form action=\"%s\"><input type="submit" class="btn btn-secondary btn-lg btn-block" value="Sign Up" /></form>' % (url_for('user.user_create_route'))
+
+		
+	return render_template("index.html", login_data=login_data, data=data)
+

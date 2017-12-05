@@ -38,26 +38,17 @@
 					<li class="nav-item">
 						<a class="nav-link" href="#">Contact</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Logged In As: Dina</a>
-					</li>
+					{{login_data | safe}}
+					<!-- <li class="nav-item">
+						<a class="nav-link" href="#">{{login_status | safe}}</a>
+					</li> -->
 				</ul>
 			</div>
 		</div>
 	</nav>
-
-<!-- 	<header class="masthead">
-		<br>
-		<br>
-		<div class="overlay">
-			<div class="container">
-				<h1 class="display-1 text-white">One Page Wonder</h1>
-				<h2 class="display-4 text-white">Will Rock Your Socks Off</h2>
-			</div>
-		</div>
-	</header> -->
-
+																																			
 	<div class="container">
+		<div class="row"></div>
 		<div class="row">
 			<div class="col-3">
 			</div>
@@ -82,5 +73,4 @@
 	<script type="text/javascript" src="/static/js/bootstrap.bundle.min.js"></script>
 
 </body>
-
 </html>

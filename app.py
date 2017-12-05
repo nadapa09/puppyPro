@@ -13,6 +13,8 @@ app.register_blueprint(controllers.results)
 app.register_blueprint(controllers.user)
 app.register_blueprint(controllers.main)
 
+app.secret_key = 'nc67dihlltjron37vte29'
+
 # Listen on external IPs
 # For us, listen to port 3000 so you can just run 'python app.py' to start the server
 if __name__ == '__main__':
