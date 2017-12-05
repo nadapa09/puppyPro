@@ -1,0 +1,12 @@
+*.pyc
+venv/*
+.vagrant/*
+__pycache__/*
+controllers/__pycache__/*
+controllers/*.pyc
+.idea/
+Project1_Spec.pdf
+Vagrantfile
+requirements.txt
+vagrant.sh
+
