@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+	<br>
+	<br>
+	<h1 style="text-align: center">Puppy Pro</h1>
+	<br>
+	<br>
+
+	<form action="/results">
+		Enter a Date Where You'd Like a Hand <input type="text" name="fname"><br>
+		Enter a Date Where You Are Free to Help <input type="text" name="lname"><br>
+		<input type="submit" value="Submit">
+		<br>
+
+		Your Matches:
+	</form>
+
+	<br>
+	<br>
+
+{% endblock %}

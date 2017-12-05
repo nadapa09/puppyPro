@@ -1,0 +1,3 @@
+DROP TABLE User;
+DROP TABLE Dog;
+DROP TABLE Event;
