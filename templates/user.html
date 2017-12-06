@@ -3,7 +3,7 @@
 	{% if createUser %}
 		<h1>Sign Up</h1>
 	{% endif %}
-	{% if not createUser %}
+	{% if edit %}
 		<h1>Edit Info</h1>
 	{% endif %}
 	{{ error_data | safe }}
