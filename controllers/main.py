@@ -23,7 +23,7 @@ def main_route():
 		logged_in_data += '<button type=\"submit\">Logout</button><br/>'
 		logged_in_data += '</form></li>'
 
-		data += '<p class="center"><h3>Welcome ' + firstname + ' ' + lastname + '</h3></p><br>'
+		data += '<p class="center"><h3 style="text-align: center">Welcome ' + firstname + ' ' + lastname + '</h3></p><br>'
 		data += '<form action="/offerHelp"><input type="submit" class="btn btn-primary btn-lg btn-block" value="Help Someone Else Out" /></form><hr>'
 		data += '<form action="/requestHelp"><input type="submit" class="btn btn-secondary btn-lg btn-block" value="Request Some Help" /></form>'
 	else:

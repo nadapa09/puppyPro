@@ -1,3 +1,5 @@
 DROP TABLE User;
 DROP TABLE Dog;
-DROP TABLE Event;
+DROP TABLE EventHistory;
+DROP TABLE EventRequest;
+DROP TABLE EventOffer;

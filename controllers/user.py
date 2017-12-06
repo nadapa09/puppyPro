@@ -216,7 +216,6 @@ def user_add_dog_route():
 	logged_in_data += '<button type=\"submit\">Logout</button><br/>'
 	logged_in_data += '</form></li>'
 
-	db = connect_to_database()
 	error_msg = ""
 	error = False
 
