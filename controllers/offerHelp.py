@@ -30,6 +30,17 @@ def offerHelp_route():
 	logged_in_data += '<button type=\"submit\">Logout</button><br/>'
 	logged_in_data += '</form></li>'
 
+	data += '<form method=\"POST\">'
+	data += 'Please select a pet care option: <select name="petCare">'
+	data += '<option value="Playing">Playing</option>'
+	data += '<option value="Sitting">Sitting</option>'
+	data += '<option value="Grooming">Grooming</option>'
+	data += '<option value="Walking">Walking</option>'
+	data += '</select></br>'
+	data += 'Select a Date Where You Are Free to Help: <input type="text" name="helpdate" value="" id="datepicker">'
+	data +=	'<button type="submit" id=select_help_date>Submit</button>'
+	data += '</form>'
+
 	if request.method == 'POST':
 		error = False
 		error_msg = ""
@@ -51,7 +62,7 @@ def offerHelp_route():
 			cur.close()
 
 			
-			data += '<form method=\"POST\">'
+			data = '<form method=\"POST\">'
 			data += 'Please select a pet care option: <select name="petCare">'
 			data += '<option value="Playing">Playing</option>'
 			data += '<option value="Sitting">Sitting</option>'
@@ -70,19 +81,9 @@ def offerHelp_route():
 				data += '<table>'
 				data += '<tr><th>Event Date</th><th>Care Type</th></tr>'
 				for r in result2:
-					data += '<tr><td>' + r['eventDate'] + '</td><td>' + r['careType'] + '</td></tr>'
+					data += '<tr><td>' + str(r['eventDate']) + '</td><td>' + r['careType'] + '</td></tr>'
 				data += '</table>'
 			return render_template("offerHelp.html", logged_in_data=logged_in_data, data=data, **options)
 
 	else:
-		data += '<form method=\"POST\">'
-		data += 'Please select a pet care option: <select name="petCare">'
-		data += '<option value="Playing">Playing</option>'
-		data += '<option value="Sitting">Sitting</option>'
-		data += '<option value="Grooming">Grooming</option>'
-		data += '<option value="Walking">Walking</option>'
-		data += '</select></br>'
-		data += 'Select a Date Where You Are Free to Help: <input type="text" name="helpdate" value="" id="datepicker">'
-		data +=	'<button type="submit" id=select_help_date>Submit</button>'
-		data += '</form>'
 		return render_template("offerHelp.html", logged_in_data=logged_in_data, data=data, **options)
