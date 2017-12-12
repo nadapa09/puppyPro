@@ -30,7 +30,7 @@ def main_route():
 		logged_in_data += '<li class="nav-item"><a class="nav-link" href=' + url_for('user.login_route') + ' id=home_login>Login</a></li>'
 		logged_in_data += '<li class="nav-item"><a class="nav-link" href=' + url_for('user.user_create_route') + ' id=home_user_create>Sign Up</a></li>'
 
-		data += '<p class="center"><h3>Welome to PuppyPro!<br> Please log in or sign up!</h3></p><br>'
+		data += '<p class="center"><h3>Welcome to PuppyPro!<br> Please log in or sign up!</h3></p><br>'
 		data += '<form action=\"%s\"><input type="submit" class="btn btn-primary btn-lg btn-block" value="Login" /></form><hr>' % (url_for('user.login_route'))
 		data += '<form action=\"%s\"><input type="submit" class="btn btn-secondary btn-lg btn-block" value="Sign Up" /></form>' % (url_for('user.user_create_route'))
 
