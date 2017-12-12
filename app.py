@@ -21,5 +21,6 @@ app.secret_key = 'nc67dihlltjron37vte29'
 if __name__ == '__main__':
     # listen on external IPs
     #app.run(host=config.env['host'], port=config.env['port'], debug=True)
-    app.run(host='0.0.0.0', port=environ.get("PORT", 5000), debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=True)
 
