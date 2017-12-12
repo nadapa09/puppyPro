@@ -11,6 +11,7 @@ gunicorn = "*"
 django-heroku = "*"
 psycopg2 = "*"
 flask = "*"
+pymysql = "*"
 
 [requires]
 
