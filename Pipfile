@@ -9,7 +9,7 @@ verify_ssl = true
 django = "*"
 gunicorn = "*"
 django-heroku = "*"
-psycopg2" = "*"
+psycopg2 = "*"
 flask = "*"
 
 [requires]
